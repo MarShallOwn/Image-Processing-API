@@ -12,6 +12,11 @@ Image Processing API is used for resize and store of image when user visit the u
 * **`Prettier:`** automatically makes your code more readable and consistent with your project's style guide. 
 * **`Sharp Module:`** it is a Node.js Module for image processing.
 
+## Project Functions
+
+* **cachingMiddleware:** middleware that is located in `src/utilities/cachingMiddleware.ts`
+* **processImage:** function that is located in `src/utilities/processImage.ts`
+* **/api/images endpoint:** endpoint that is located in `src/routes/api/images.ts`
 
 ## Prerequisites
 You will need the following things properly installed on your computer.
