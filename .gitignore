@@ -1,1 +1,7 @@
 node_modules
+
+# exclude everything
+assets/thumb/*
+
+# exception to the rule
+!assets/thumb/.gitkeep
