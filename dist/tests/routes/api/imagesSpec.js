@@ -102,6 +102,22 @@ describe('Test /api/images endpoint', function () {
             }
         });
     }); });
+    it('should reject when adding width or height of a thing that is not a number (NaN)', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var result;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    filename = 'fjord';
+                    height = 200;
+                    width = -'hello';
+                    return [4 /*yield*/, request.get("/api/images?imageName=".concat(filename, "&width=").concat(width, "&height=").concat(height))];
+                case 1:
+                    result = _a.sent();
+                    expect(result.status).toBe(400);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
     it('should accept when searching for right image and right size', function () { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {

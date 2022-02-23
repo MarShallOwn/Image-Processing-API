@@ -15,6 +15,9 @@ var images = express_1.default.Router();
  */
 images.get('/', cachingMiddleware_1.default, function (req, res) {
     var _a = req.query, imageName = _a.imageName, height = _a.height, width = _a.width;
+    if (isNaN(height) || isNaN(width)) {
+        return res.status(400).send('Height or Width should be number');
+    }
     if (parseInt(height) <= 0 ||
         parseInt(width) <= 0) {
         return res

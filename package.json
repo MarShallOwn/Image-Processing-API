@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run prettier & npm run lint & npx tsc",
+    "build": "npm run prettier && npm run lint && npx tsc",
     "prettier": "prettier --config .prettierrc --write src/**/*.ts",
     "lint": "eslint . --ext .ts",
-    "start": "npm run build & nodemon dist/server",
-    "test": "npm run build & jasmine",
-    "dev": "npm run build & nodemon src/server.ts"
+    "start": "npm run build && nodemon dist/server",
+    "test": "npm run build && jasmine",
+    "dev": "npm run build && nodemon src/server.ts"
   },
   "keywords": [],
   "author": "MarShallOwn",

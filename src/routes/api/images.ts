@@ -18,6 +18,10 @@ images.get(
   (req: express.Request, res: express.Response) => {
     const { imageName, height, width }: requestQuery = req.query;
 
+    if (isNaN(height as number) || isNaN(width as number)) {
+      return res.status(400).send('Height or Width should be number');
+    }
+
     if (
       parseInt(height as unknown as string) <= 0 ||
       parseInt(width as unknown as string) <= 0

@@ -52,6 +52,18 @@ describe('Test /api/images endpoint', () => {
     expect(result.status).toBe(400);
   });
 
+  it('should reject when adding width or height of a thing that is not a number (NaN)', async () => {
+    filename = 'fjord';
+    height = 200;
+    width = -'hello';
+
+    const result = await request.get(
+      `/api/images?imageName=${filename}&width=${width}&height=${height}`
+    );
+
+    expect(result.status).toBe(400);
+  });
+
   it('should accept when searching for right image and right size', async () => {
     height = 50;
     width = 50;
